@@ -364,6 +364,10 @@ class FileManager {
 	 * @return Bool
 	 */
 	public static function exists(path:String):Bool {
+		#if sys
+		return FileSystem.exists(path);
+		#end
+
 		return openfl.utils.Assets.exists(path);
 	}
 
