@@ -5,7 +5,14 @@ class CartChecker
 {
 	public static function readCartFolder()
 	{
-                trace(FileManager.readDirectory('carts/'));
+		if (FileManager.exists('carts/'))
+		{
+			trace(FileManager.readDirectory('carts/'));
+		}
+		else
+		{
+			trace('Cart directory is missing');
+		}
 	}
 }
 #end
